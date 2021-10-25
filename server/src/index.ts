@@ -1,1 +1,5 @@
-console.log("index")
+import "reflect-metadata";
+import bootstrap from './bootstrap/bootstrap';
+import { config } from './config';
+
+bootstrap(config);
