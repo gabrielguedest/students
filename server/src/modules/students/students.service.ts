@@ -51,4 +51,15 @@ export class StudentsService {
 
     return await this.studentsRepository.save(student);
   }
+
+  async deleteStudent(id: string) {
+    const student = await this.studentsRepository.getById(id);
+
+    if (!student) {
+      throw new StudentNotFound();
+    }
+
+    const deleted =  await this.studentsRepository.delete(id);
+    return deleted.affected ?? 0 > 0
+  }
 }

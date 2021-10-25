@@ -38,4 +38,8 @@ export class StudentsRepository {
   async getById(id: string) {
     return await this.repository.findOne(id);
   }
+
+  async delete(id: string) {
+    return await this.repository.delete({ id });
+  }
 }

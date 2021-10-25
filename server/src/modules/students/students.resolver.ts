@@ -4,6 +4,7 @@ import { MissingParamsError } from "./errors/students.errors";
 import { Student } from "./student.entity";
 import { StudentsService } from "./students.service";
 import { CreateStudentInput, UpdateStudentInput } from "./types/students.input";
+import { DeleteStudentResponse } from "./types/students.response";
 
 @Service()
 @Resolver() 
@@ -15,7 +16,6 @@ export class StudentsResolver {
     return await this.studentsService.getStudents(filter);
   }
 
-  
   @Mutation(() => Student)
   async addStudent(
     @Arg("data") data: CreateStudentInput
@@ -37,5 +37,16 @@ export class StudentsResolver {
     }
 
     return await this.studentsService.editStudent(id, data);
+  }
+
+  @Mutation(() => DeleteStudentResponse)
+  async deleteStudent(
+    @Arg("id") id: string
+  ) {
+    const deleted = await this.studentsService.deleteStudent(id);
+
+    return {
+      deleted,
+    };
   }
 }
