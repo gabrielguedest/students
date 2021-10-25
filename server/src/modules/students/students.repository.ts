@@ -10,6 +10,19 @@ export class StudentsRepository {
     this.repository = getRepository(Student);
   }
 
+  async save(student: Student) {
+    return await this.repository.save(student);
+  }
+
+  async getByEmailOrCPF(filter: { email?: string, cpf?: string}) {
+    return await this.repository.findOne({
+      where: [
+        filter.email ? {email: filter.email} : {},
+        filter.cpf ? {cpf: filter.cpf} : {},
+      ],
+    });
+  }
+
   async getAll(filter: string) {
     return await this.repository.find({ 
       where: filter 
