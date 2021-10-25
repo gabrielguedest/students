@@ -34,4 +34,8 @@ export class StudentsRepository {
         : {}
     });
   }
+
+  async getById(id: string) {
+    return await this.repository.findOne(id);
+  }
 }

@@ -16,3 +16,19 @@ export class CreateStudentInput {
   @Field()
   email: string
 }
+
+@InputType()
+export class UpdateStudentInput {
+  @IsNotEmpty()
+  @Length(11)
+  @Field({ nullable: true })
+  cpf?: string
+
+  @IsNotEmpty()
+  @Field({ nullable: true })
+  name?: string
+
+  @IsNotEmpty()
+  @Field({ nullable: true })
+  email?: string
+}
