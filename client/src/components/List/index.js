@@ -27,6 +27,11 @@ const TableData = styled.td`
   
   text-align: left;
   color: ${props => props.main ? "#5d6dde" : "#606060"};
+  width: ${props => props.main ? "35%" : "20%"};
+`
+
+const ActionTableData = styled(TableData)`
+  width: 10%;
 `
 
 export const List = ({ students, remove }) => {
@@ -46,11 +51,11 @@ export const List = ({ students, remove }) => {
             <TableData main>{student.name}</TableData>
             <TableData>{student.email}</TableData>
             <TableData>{cpfMask(student.cpf)}</TableData>
-            <TableData>
+            <ActionTableData>
               <Button onClick={() => remove(student.id)}>
                 <MdDeleteOutline size={"1.5em"}/>
               </Button>
-            </TableData>
+            </ActionTableData>
           </Row>
         ))}
       </tbody>
