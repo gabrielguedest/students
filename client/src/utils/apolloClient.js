@@ -6,6 +6,5 @@ export const apolloClient = () => {
       uri: process.env.REACT_APP_GRAPHQL_URL
     }),
     cache: new InMemoryCache(),
-    connectToDevTools: true,
   })
 }

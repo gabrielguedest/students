@@ -51,10 +51,12 @@ export const App = () => {
         loading 
           ? <Loading>Carregando dados...</Loading>
           : (<>
-              {error && <ErrorMessage>Ops! Ocorreu um erro...</ErrorMessage>}
-              {data?.students && data.students.length > 0
-                ? <List students={data.students} remove={removeStudent}/>
-                : <EmptyData />}
+              {error 
+                ? <ErrorMessage>Ops! Ocorreu um erro...</ErrorMessage>
+                : data?.students && data.students.length > 0
+                  ? <List students={data.students} remove={removeStudent}/>
+                  : <EmptyData />
+              }
             </>)
       }
       
