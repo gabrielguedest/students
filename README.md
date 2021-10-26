@@ -6,9 +6,7 @@ Lista de estudantes (client + server), utilizando React e Nodejs.
 
 Para rodar a aplicação você vai precisar ter instalado:
 
-- Docker
-
-:)
+- [Docker](https://www.docker.com/products/docker-desktop) :)
 
 ## Configuração
 
@@ -24,3 +22,60 @@ DB_HOST=postgres
 Na raíz do projeto execute o docker-compose:
 
 ```$ docker-compose up```
+
+
+## Testes
+
+### Client
+
+Lembre-se de antes, navegar até a pasta correta do client:
+
+```$ cd client```
+
+#### Instalando as dependências
+
+Para instalar as depêndencias, execute o comando:
+
+```$ yarn```
+
+ou
+
+```$ npm install```
+
+
+#### Executando os testes
+
+Para executar os testes, execute o comando:
+
+```$ yarn test```
+
+ou
+
+```$ npm run test```
+
+### Server
+
+Lembre-se de antes, navegar até a pasta correta do server:
+
+```$ cd server```
+
+#### Instalando as dependências
+
+Para instalar as depêndencias, execute o comando:
+
+```$ yarn```
+
+ou
+
+```$ npm install```
+
+
+#### Executando os testes
+
+Para executar os testes, execute o comando:
+
+```$ yarn test```
+
+ou
+
+```$ npm run test```
