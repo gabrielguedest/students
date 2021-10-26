@@ -17,7 +17,7 @@ export const EmptyData = () => {
   return (
     <Wrapper>
       <RiFileListLine color={"#919191"} size={"3em"}/>
-      <Message>A lista de estudantes está vazia.</Message>
+      <Message>Nenhum resultado encontrado.</Message>
     </Wrapper>
   );
 }
