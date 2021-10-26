@@ -7,7 +7,6 @@ export const GET_STUDENTS = gql`
       name
       cpf
       email
-      createdAt
     }
   }
 `

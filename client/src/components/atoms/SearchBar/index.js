@@ -34,6 +34,7 @@ export const SearchBar = ({ onChange }) => {
       placeholder="Pesquisar" 
       onChange={e => onSearchChange(e.target.value)}
       value={search}
+      data-testid="search-bar"
     />
   );
 }

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_STUDENTS } from '../../graphql/queries/students';
-import { Header } from '../Header';
-import { List } from '../List';
-import { SearchBar } from '../SearchBar';
-import { ErrorMessage } from '../ErrorMessage';
-import { EmptyData } from '../EmptyData';
-import { DELETE_STUDENT } from '../../graphql/mutations/students';
+import { GET_STUDENTS } from '../../../graphql/queries/students';
+import { DELETE_STUDENT } from '../../../graphql/mutations/students';
+import { Header } from '../../atoms/Header';
+import { List } from '../../molecules/List';
+import { SearchBar } from '../../atoms/SearchBar';
+import { ErrorMessage } from '../../atoms/ErrorMessage';
+import { EmptyData } from '../../atoms/EmptyData';
 
 const Wrapper = styled.div`
   max-width: 960px;
@@ -19,7 +19,7 @@ const Loading = styled.p`
   text-align: center;
 `
 
-export const App = () => {
+export const Home = () => {
   const { data, loading, error, refetch } = useQuery(GET_STUDENTS);
   const [ deleteStudent, deleteResponse ] = useMutation(DELETE_STUDENT, {
     refetchQueries: [

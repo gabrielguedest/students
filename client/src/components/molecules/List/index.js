@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { cpfMask } from '../../utils/cpfMask';
 import { MdDeleteOutline } from 'react-icons/md';
-import { Button } from "../Button";
+import { cpfMask } from '../../../utils/cpfMask';
+import { Button } from "../../atoms/Button";
 
 const Table = styled.table`
   width: 100%;

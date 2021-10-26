@@ -33,7 +33,7 @@ const ButtonComponent = styled.div`
 
 export const Button = ({ children, onClick }) => {
   return (
-    <ButtonComponent onClick={onClick}>
+    <ButtonComponent onClick={onClick} data-testid="button">
       {children}
     </ButtonComponent>
   );
